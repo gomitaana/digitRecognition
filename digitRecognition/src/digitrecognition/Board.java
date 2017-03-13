@@ -52,7 +52,7 @@ public class Board extends JFrame{
                 points = drawArea.getPoints();
                 image.setPoints(points);
                 image.setImage();
-                image.printBits();
+                //image.printBits();
                 int num = image.getNumber();
                 drawArea.clear();
                 image.clear();

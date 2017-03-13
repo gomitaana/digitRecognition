@@ -1,8 +1,5 @@
 package digitrecognition;
 import java.awt.image.BufferedImage;
-import java.io.FileNotFoundException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 /**
  *
  * @author gomit
@@ -64,6 +61,7 @@ public class recognition {
 		}
             }
         }
+        //Obtener el rectangulo
         int sqrlen = drawAreaSize[3] - drawAreaSize[2] - drawAreaSize[1] + drawAreaSize[0]; 
 	if (sqrlen > 0) {
             drawAreaSize[2] += sqrlen / 2;

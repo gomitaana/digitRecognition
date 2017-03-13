@@ -15,10 +15,11 @@ public class MultilayerNeuralNet {
     private double[] inputs;
     private double[] layersout;
     private double[] outReults;
+    private double LEARNING_RATE=0.3;
 
     public MultilayerNeuralNet() {
 	this.input   = 101;
-	this.layer  = 36;
+	this.layer  = 25;
 	this.output  = 10;
 	this.weights1layer = new double[this.input][this.layer];
 	this.weight2layer = new double[this.layer][this.output];
@@ -91,12 +92,12 @@ public class MultilayerNeuralNet {
         }
 	for (int i = 0; i < input; i++){
             for (int j = 0; j < layer; j++){
-                weights1layer[i][j] += auxj[j] * inputs[i];
+                weights1layer[i][j] += LEARNING_RATE * auxj[j] * inputs[i];
             }
         }
 	for (int j = 0; j < layer; j++){
             for (int k = 0; k < output; k++){
-                weight2layer[j][k] +=  aux[k] * layersout[j];
+                weight2layer[j][k] +=  LEARNING_RATE * aux[k] * layersout[j];
             }
         }            
     }
