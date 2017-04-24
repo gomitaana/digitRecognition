@@ -1,4 +1,5 @@
 package digitrecognition; 
+import java.awt.Color;
 import javax.swing.*;
 /**
  *
@@ -24,15 +25,16 @@ public class Board extends JFrame{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout());
 
-        sudoku.setBorder(javax.swing.BorderFactory.createTitledBorder("Sudoku"));
+        sudoku.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setLayout(new java.awt.GridLayout(3, 3));
 
-        drawing.setBorder(javax.swing.BorderFactory.createTitledBorder("Draw"));
+        
         drawArea.setMaximumSize(new java.awt.Dimension(270, 270));
         drawArea.setMinimumSize(new java.awt.Dimension(270, 270));
         drawArea.setPreferredSize(new java.awt.Dimension(270, 270));
+        drawArea.setBackground(Color.WHITE);
 
         javax.swing.GroupLayout jPaneldrawLayout = new javax.swing.GroupLayout(drawArea);
         drawArea.setLayout(jPaneldrawLayout);
@@ -45,7 +47,7 @@ public class Board extends JFrame{
             .addGap(0, 270, Short.MAX_VALUE)
         );
 
-        recog.setText("Recognize");
+        recog.setText("Reconocer");
         recog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boolean[][] points;
@@ -59,6 +61,7 @@ public class Board extends JFrame{
             }
         });
 
+        cleanDraw.setText("Limpiar");
         cleanDraw.setText("Clean");
         cleanDraw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
